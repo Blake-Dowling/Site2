@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import './Contact.css'
 export function Contact(props) {
-    console.debug(props.setContactPopup)
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [emailAddress, setEmailAddress] = useState("")
     const [message, setMessage] = useState("")
     return (
-        <div className="contact">
-            <div className="popup">
+        <div className={`contact${props.contactPopup?"":" hidden"}`}>
+            <div className={`popup${props.contactPopup?"":" hidden"}`}>
                 <div className="contact-heading">
                     <span>Contact</span>
                     <button className="exit-button" onClick={() => props.setContactPopup(prevContactPopup => {return !prevContactPopup})}/>

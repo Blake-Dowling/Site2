@@ -5,28 +5,28 @@ export function Entry(props){
   
       <div className="experience-entry">
   
-        <div className="entry-left">
+        <div className="entry-left text-item">
           <div className="entry-left-1">
               <img className="entry-icon" src={props.entryData.icon}  />
           </div>
           <div className="entry-left-2">
-            <div className="entry-date">
+            <h2 className="entry-date">
               {props.entryData.date}
-            </div>
-            <div className="entry-role">
+            </h2>
+            <text className="entry-role">
               {props.entryData.role}
-            </div>
+            </text>
           </div>
         </div>
   
-        <div className="entry-right">
+        <div className="entry-right text-item">
           <div className="entry-right-1">
-            <div className="entry-company">
+              <h2 className="entry-company">
                 {props.entryData.company}
-              </div>
-              <div className="entry-description">
+              </h2>
+              <text className="entry-description">
                 {props.entryData.description}
-              </div>
+              </text>
             </div>
         </div>
       </div>

@@ -3,17 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Project.css'
 
-export function Project(props) {
+export function Project(props, ref) {
   return (
     <div className="project">
-        <div className="project-name">
+        <h2 className="text-item project-name">
             {props.projectData.name}
+        </h2>
+        <div className="text-item">
+            <a href={props.projectData.github} target="_blank" >
+                <FontAwesomeIcon size="2x" icon={faGithub} />
+                {props.projectData.github}
+            </a>
         </div>
-        <a className="project-github" href={props.projectData.github} target="_blank" >
-        
-            <FontAwesomeIcon size="2x" icon={faGithub} />
-            {props.projectData.github}
-        </a>
         <div className="project-demo">
             {props.projectData["demo-type"] === "iframe" && 
                 <iframe
@@ -26,8 +27,10 @@ export function Project(props) {
                 />
             }
         </div>
-        <div className="project-description">
-            {props.projectData.description}
+        <div className="text-item">
+            <text >
+                {props.projectData.description}
+            </text>
         </div>
     </div>
   )

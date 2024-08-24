@@ -1,18 +1,8 @@
 .project{
     margin: 4vh;
 }
-.project-name{
-
-}
-.project-github{
-
-}
 .project-demo > *{
-    /* margin-top: auto; */
     width: 50vw;
     height: 50vh;
 }
 
-.project-description{
-
-}

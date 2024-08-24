@@ -3,22 +3,35 @@
     color: black;
     width: 100vw;
     height: 100vh;
+    max-height: 100vh;
     position: fixed;
     display: flex;
     flex-direction : column;
     align-items: center;
     justify-content: center;
     text-align: left;
+    background-color: rgba(0, 0, 0, .5);
+    transition: background-color 1s ease-in-out;
+}
+.contact.hidden{
+    max-height: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: max-height 0s 1s;
 }
 .popup{
+    display: flex;
+    opacity: 1;
     padding: 2vh;
-    background: white;
+    background-color: white;
     width: 48vw;
     height: 58vh;
-    display: flex;
     flex-direction : column;
     align-items: center;
     justify-content: space-evenly;
+    transition: opacity 1s ease-in-out;
+}
+.popup.hidden{
+    opacity: 0;
 }
 .contact-heading{
     width: 100%;
@@ -30,6 +43,7 @@
     font-weight: 700;
 }
 .contact-heading > span{
+    display: None;
     margin-left: auto;
 }
 .exit-button{

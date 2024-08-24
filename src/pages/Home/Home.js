@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { About } from '..//About/About'
 import { Projects } from '../Projects/Projects'
 import { Education } from '../Education/Education'
@@ -7,9 +7,8 @@ import { Resume } from '../Resume/Resume'
 import { Contact } from '../Contact/Contact'
 import BackgroundImageSelf from '../../assets/_DSF0107.JPG'
 import './Home.css'
-export function Home() {
-  return (
-    <div className="home">
+export const Home = forwardRef((props, ref) => (
+    <div ref={ref} className="home">
       <div className="page home-first">
         <div className="home-background" alt="Logo" 
           style={{
@@ -18,11 +17,7 @@ export function Home() {
             backgroundPosition: 'center'
           }} />
       </div>
-      <About/>
-      {/* <Education/>
-      <Experience/> */}
-      <Projects/>
-      {/* <Contact/> */}
+
     </div>
   )
-}
+)

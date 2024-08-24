@@ -5,14 +5,17 @@ import { Header } from './Components/Header'
 import { Home } from './pages/Home/Home'
 import { About } from './pages/About/About'
 import { Projects } from './pages/Projects/Projects'
+import { Education } from './pages/Education/Education'
 import { Experience } from './pages/Experience/Experience'
 import { Resume } from './pages/Resume/Resume'
 import { Contact } from './pages/Contact/Contact'
 
-
+function scrollToRef(ref){
+  ref?.current?.scrollIntoView({ behavior: 'smooth' })
+}
 
 function App() {
-  const [contactPopup, setContactPopup] = useState(true)
+  const [contactPopup, setContactPopup] = useState(false)
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
   const educationRef = useRef(null)
@@ -22,17 +25,23 @@ function App() {
   return (
     <div className="app">
 
-      <Header setContactPopup={setContactPopup}/>
-        {contactPopup && <Contact setContactPopup={setContactPopup}/>}
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/projects' element={<Projects/>}/>
-        <Route path='/experience' element={<Experience/>}/>
-        <Route path='/resume' element={<Resume/>}/>
-        <Route path='/contact' element={<Contact/>}/>
+      <Header 
+        homeRef={homeRef}
+        aboutRef={aboutRef}
+        projectsRef={projectsRef}
+        scrollToRef={scrollToRef}
+        setContactPopup={setContactPopup}
+      />
+      {<Contact contactPopup={contactPopup} setContactPopup={setContactPopup}/>}
+      {/* {contactPopup && <Contact contactPopup={contactPopup} setContactPopup={setContactPopup}/>} */}
+      <Home ref={homeRef}/>
+      <div className="page">
+        <About ref={aboutRef}/>
+        <Education/>
+        <Experience/>
+      </div>
 
-      </Routes>
+      <Projects ref={projectsRef}/>
 
 
 
