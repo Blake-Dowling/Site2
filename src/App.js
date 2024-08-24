@@ -15,8 +15,11 @@ function scrollToRef(ref){
 }
 let prevTimeActive = new Date()
 function App() {
+  const [headerVisible, setHeaderVisible] = useState(true)
   const [active, setActive] = useState(false)
   const [contactPopup, setContactPopup] = useState(false)
+  const [currentPage, setCurrentPage] = useState(0)
+  const [loaded, setLoaded] = useState(false)
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
   const educationRef = useRef(null)
@@ -29,25 +32,34 @@ function App() {
       setActive(true)
     }
     function checkActive(){
-      if(new Date() - prevTimeActive >= 1000){
+      if(new Date() - prevTimeActive >= 3000){
         setActive(false)
       }
+    }
+    function handleScroll(){
+      setCurrentPage(parseInt(window.scrollY/window.innerHeight))
+
     }
 
     window.addEventListener('mousemove', handleActive)
     window.addEventListener('scroll', handleActive)
+    window.addEventListener('scroll', handleScroll)
     const activeInterval = setInterval(checkActive, 500)
+    window.addEventListener('load', setLoaded(true))
     return () => {
       window.removeEventListener('mousemove', handleActive)
       window.removeEventListener('scroll', handleActive)
+      window.removeEventListener('scroll', handleScroll)
       clearInterval(activeInterval)
     }
   }, [])
 
   return (
-    <div className="app">
-
+    <div className={`app${!loaded?" loading":""}`}>
+      
       <Header 
+        headerVisible={headerVisible}
+        setHeaderVisible={setHeaderVisible}
         homeRef={homeRef}
         aboutRef={aboutRef}
         educationRef={educationRef}
@@ -67,8 +79,20 @@ function App() {
       </div>
 
       <Projects ref={projectsRef}/>
-      <div className={`top-button${active?"":" inactive"}`} onClick={() => scrollToRef(homeRef)}>Top</div>
-
+      {/* <div className={`top-button${active?"":" inactive"}`} onClick={() => scrollToRef(homeRef)}>Top</div> */}
+      {currentPage===0 &&
+        <img className={`bottom-button moving${active?"":" inactive"}`} onClick={() => scrollToRef(educationRef)} src={'/down-icon.svg'}></img>
+      }
+      {currentPage===1 &&
+      <>
+        <img className={`top-button moving${active?"":" inactive"}${headerVisible?" header-visible":""}`} onClick={() => scrollToRef(homeRef)} src={'/up-icon.svg'}></img>
+        <img className={`bottom-button moving${active?"":" inactive"}`} onClick={() => scrollToRef(projectsRef)} src={'/down-icon.svg'}></img>
+      </>}
+      {currentPage===2 &&
+      <>
+        <img className={`top-button moving${active?"":" inactive"}${headerVisible?" header-visible":""}`} onClick={() => scrollToRef(educationRef)} src={'/up-icon.svg'}></img>
+        <div className={`bottom-button${active?"":" inactive"}`} onClick={() => scrollToRef(homeRef)} >Top</div>
+      </>}
 
     </div>
   );

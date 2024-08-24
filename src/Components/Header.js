@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import './Header.css'
 let lastScrollY = 0
 export function Header(props) {
-    const [visible, setVisible] = useState(true)
+
     const [dark, setDark] = useState(false)
     useEffect(() => {
         function handleScroll(){
@@ -16,10 +16,10 @@ export function Header(props) {
                 setDark(true)
             }
             if(window.scrollY === 0 || window.scrollY < lastScrollY){
-                setVisible(true)
+                props.setHeaderVisible(true)
             }
             else{
-                setVisible(false)
+                props.setHeaderVisible(false)
             }
             lastScrollY = window.scrollY
         }
@@ -29,7 +29,7 @@ export function Header(props) {
         }
     }, [])
   return (
-    <div className={`header${!visible?" hidden":visible?" visible":""}${!dark?" light":dark?" dark":""}`}>
+    <div className={`header${!props.headerVisible?" hidden":props.headerVisible?" visible":""}${!dark?" light":dark?" dark":""}`}>
         <div className="header-name">
             <div to="/" className="link" onClick={() => props.scrollToRef(props.homeRef)}>
                 <span className="header-name-text">

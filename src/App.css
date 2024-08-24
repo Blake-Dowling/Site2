@@ -27,6 +27,7 @@ h2{
   text-align: left;
 }
 .app{
+  z-index: 5;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -36,6 +37,14 @@ h2{
   background-size: 'cover';
   background-position: 'center';
   background-attachment: fixed;
+  filter: none;
+  transition: filter 10s;
+  
+}
+.app.loading{
+  /* filter: ; */
+  image-rendering: pixelated;
+  filter: blur(20px) contrast(200%) saturate(150%);
 }
 .page{
   width: 100vw;
@@ -61,14 +70,53 @@ h2{
 }
 
 .top-button{
+  color: white;
+  max-height: 4vh;
+  position: fixed;
+  top: 4vh;
+  text-decoration: underline;
+  cursor: pointer;
 
-  max-height: 2vh;
+  transition: transform .5s ease-in-out;
+}
+.top-button.moving{
+  animation: top-button-move 1s ease-in-out infinite;
+}
+.top-button.inactive{
+  max-height: 0px;
+  overflow: hidden;
+}
+.top-button.header-visible{
+  transform: translateY(10vh); 
+}
+@keyframes top-button-move {
+  0%{
+    top: 4vh;
+  }
+  100%{
+    top: 0vh;
+  }
+}
+.bottom-button{
+  color: white;
+  max-height: 4vh;
   position: fixed;
   bottom: 4vh;
   text-decoration: underline;
   cursor: pointer;
 }
-.top-button.inactive{
+.bottom-button.moving{
+  animation: bottom-button-move 1s ease-in-out infinite;
+}
+.bottom-button.inactive{
   max-height: 0px;
   overflow: hidden;
+}
+@keyframes bottom-button-move {
+  0%{
+    bottom: 4vh;
+  }
+  100%{
+    bottom: 0vh;
+  }
 }

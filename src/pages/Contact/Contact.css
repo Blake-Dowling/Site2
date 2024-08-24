@@ -15,6 +15,7 @@
 }
 .contact.hidden{
     max-height: 0px;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
     transition: max-height 0s 1s;
 }
