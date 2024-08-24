@@ -41,8 +41,8 @@ export function Header(props) {
         <nav >
             <ul className="nav-list">
                 <li><div to="/about" onClick={() => props.scrollToRef(props.aboutRef)}>About</div></li>
-                <li><div to="/projects" onClick={() => {console.debug("clicked");props.scrollToRef(props.projectsRef)}}>Projects</div></li>
-                <li><div to="/experience" >Experience</div></li>
+                <li><div to="/projects" onClick={() => {props.scrollToRef(props.projectsRef)}}>Projects</div></li>
+                <li><div to="/experience" onClick={() => {props.scrollToRef(props.educationRef)}}>Experience</div></li>
                 <li><div to="/resume" >Resume</div></li>
                 <li><div to="/contact" onClick={() => props.setContactPopup(prevContactPopup => {return !prevContactPopup})}>Contact</div></li>
             </ul>

@@ -30,6 +30,7 @@ h2{
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100vw;
   min-height: 100%;
   background-size: 'cover';
@@ -57,4 +58,17 @@ h2{
   padding-bottom: 1.6vh;
   padding-left: 2vw;
   padding-right: 2vw;
+}
+
+.top-button{
+
+  max-height: 2vh;
+  position: fixed;
+  bottom: 4vh;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.top-button.inactive{
+  max-height: 0px;
+  overflow: hidden;
 }

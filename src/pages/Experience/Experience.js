@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Entry } from '../../Components/Entry'
 import './Experience.css'
 import entries from './Experience.json'
 
-export function Experience() {
-  const experienceData = entries
-  return (
-    <div className="entry-section experience">
+const experienceData = entries
+export const Experience = forwardRef((props, ref) => (
+
+    <div ref={ref} className="entry-section experience">
       <h1 className="text-item">
         Experience
       </h1>
@@ -15,4 +15,4 @@ export function Experience() {
       {experienceData.map((entryData) => {return <Entry entryData={entryData}/>})}
     </div>
   )
-}
+)
