@@ -1,0 +1,56 @@
+.experience-entry{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+
+.entry-left{
+    padding: 4vh;
+    /* padding-left: 4vw;
+    padding-right: 4vw; */
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+.entry-right{
+    border-left: solid white 2px;
+    padding: 4vh;
+    /* padding-left: 4vw;
+    padding-right: 4vw; */
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+
+.entry-left .entry-left-1{
+    width: 50%;
+}
+.entry-left .entry-left-1 .entry-icon{
+    height: 10vh;
+}
+.entry-left .entry-left-2{
+    width: 50%;
+    /* margin-left: auto; */
+    display: flex;
+    flex-direction: column;
+}
+.entry-left .entry-left-2 .entry-date{
+    font-weight: 700;
+}
+.left .entry-left-2 .entry-role{
+
+}
+
+.entry-right .entry-right-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.entry-right .entry-right-1 .entry-company{
+    font-weight: 700;
+}
+.entry-right .entry-right-1 .entry-description{
+    text-align: left;
+}

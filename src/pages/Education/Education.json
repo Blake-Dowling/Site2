@@ -1,0 +1,17 @@
+[
+    {
+        "icon": "/sdsu-icon.png",
+        "date": "San Diego State University",
+        "role": "M.S., Computer Science",
+        "company": "2026",
+        "description": "GPA: N/A"
+    },
+    {
+        "icon": "/ucsc-icon.png",
+        "date": "University of California, Santa Cruz",
+        "role": "B.S., Computer Science",
+        "company": "2023",
+        "description": "Major GPA: 3.7"
+    }
+
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Deep Q Arcade",
+        "demo-type": "iframe",
+        "demo-url": "https://blake-dowling.github.io/ML_Games/",
+        "github": "https://github.com/Blake-Dowling/ML_Games",
+        "description": "Deployed Three.js arcade simulation demonstrating AI algorithms for Tetris, Snake, 1024, and Mario with static frontend model loading and training history visualization. Leveraged OOP Principles of inheritance, overloading, and polymorphism to modularize games, agents, models, and visual components. Designed DQN and genetic algorithm classes using Tensorflow.js and Node.js backend for 100x training speedup and model persistence."
+    },
+    {
+        "name": "Multithreaded Distributed Password Cracker",
+        "demo-type": "video",
+        "demo-url": "/cracker.mov",
+        "github": "https://github.com/Blake-Dowling/Distributed-Parallel-Cracker",
+        "description": "Solved time-efficient brute-force DES hash decryption using C++, Posix Thread Library, and socket communication to maximally utilize 4 24-core servers. Implemented thread pool design to allow use of a variable number of cores per server. Optimized multicast and TCP interaction to achieve a 2000% speedup from my sequential true radix cracking algorithm, winning first place in an advanced C++ programming competition."
+    },
+    {
+        "name": "Mobile Travel Planner",
+        "demo-type": "iframe",
+        "demo-url": "https://docs.google.com/presentation/d/1jzmkYxbEvYFSVxB6ju4xgqs1I0NnqO9h/edit#slide=id.p1",
+        "github": "https://github.com/kesparik/CSE-115A-Road-Trip-Project",
+        "description": "Led a team as Scrum master in building a mobile navigation app React Native, Google APIs, and Nativewind. Drove group members to learn task-relevant skills such as Axios, MongoDB, and Node.js to complete sprints with compatible integrations. Received positive recognition from instructor for Agile Scrum accordance and collective completion of user features in class product presentations."
+    },
+    {
+        "name": "Resume Generator",
+        "demo-type": "iframe",
+        "demo-url": "https://blake-dowling.github.io/Resume-Generator/",
+        "github": "https://github.com/Blake-Dowling/Resume-Generator",
+        "description": "Taught myself React.js and implemented a visual web interface for CSS styling of downloadable resumes with built-in templates. Streamlined data processing using JSON, React component mapping, SASS, and setState callbacks. Deployed a feature-rich front end application with interactive stylesheets, live rendering, pop-up cards, accordions, and carousels."
+    }
+]

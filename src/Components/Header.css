@@ -1,0 +1,45 @@
+.header {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .link{
+    text-decoration: none;
+  }
+  .header-name{
+    padding: 4vh;
+  }
+  .header-name-text{
+    /* margin: 2vh; */
+    color: white;
+    font-size: 4vh;
+  }
+  nav{
+    padding: 4vh;
+    margin-left: auto;
+  }
+  .nav-list{
+    /* background: rgba(0,0,0,0); */
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .nav-list * {
+    font-size: 4vh;
+    margin: 2vh;
+  }
+
+  
+  .social{
+    padding: 4vh;
+    margin-left: auto;
+  }
+  .social *{
+    margin: 2vh;
+  }

@@ -1,0 +1,16 @@
+[
+    {
+        "icon": "/tug-icon.jpeg",
+        "date": "June 2023 - Present",
+        "role": "Software Engineer for Cognitive Radio Network Team",
+        "company": "Technology Unlimited Group",
+        "description": "Developed machine learning algorithms for channel analysis and adaptation. Introduced major workflow improvement by creating live coding API, avoiding 60s network simulator startup. Planned and implemented significant project infrastructure, documentation, testing, and workflow changes."
+    },
+    {
+        "icon": "/baskin-icon.png",
+        "date": "Jan 2023 - June 2023",
+        "role": "Computer Science and Engineering Course Reader",
+        "company": "Baskin School of Engineering",
+        "description": "Extended understanding of computer science theory and carefully directed reading team’s awareness to students’ insights. Collaborated closely with faculty and peers to cultivate a fair and constructive academic environment. Encouraged student engagement by acknowledging effort through thoughtful explanations of corrections."
+    }
+]
