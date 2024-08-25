@@ -26,6 +26,9 @@ h2{
   font-weight: 700;
   text-align: left;
 }
+iframe{
+  border: none;
+}
 .app{
   z-index: 5;
   position: relative;
