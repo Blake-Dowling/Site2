@@ -9,6 +9,7 @@ import { Education } from './pages/Education/Education'
 import { Experience } from './pages/Experience/Experience'
 import { Resume } from './pages/Resume/Resume'
 import { Contact } from './pages/Contact/Contact'
+import emailjs from '@emailjs/browser'//'emailjs-com'
 
 function scrollToRef(ref){
   ref?.current?.scrollIntoView({ behavior: 'smooth' })
@@ -40,17 +41,31 @@ function App() {
       setCurrentPage(parseInt(window.scrollY/window.innerHeight))
 
     }
+    function sendEmail(event){
+      event.preventDefault()
+      emailjs.sendForm('service_aemqy4g', 'template_3c0182j', event.target, {publicKey: `${process.env.REACT_APP_EMAIL_JS_KEY}`})
+      .then(() => {
+        console.log('SUCCESS!');
+      }, (error) => {
+          console.log('FAILED...', error);
+      });
+    }
 
     window.addEventListener('mousemove', handleActive)
     window.addEventListener('scroll', handleActive)
     window.addEventListener('scroll', handleScroll)
     const activeInterval = setInterval(checkActive, 500)
     window.addEventListener('load', setLoaded(true))
+
+    const form = document.getElementById('contact-form')
+    form.addEventListener('submit', (event) => sendEmail(event))
     return () => {
       window.removeEventListener('mousemove', handleActive)
       window.removeEventListener('scroll', handleActive)
       window.removeEventListener('scroll', handleScroll)
       clearInterval(activeInterval)
+      window.removeEventListener('load', setLoaded(true))
+      // window.removeEventListener('submit', (event) => sendEmail(event))
     }
   }, [])
 
