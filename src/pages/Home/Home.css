@@ -1,7 +1,11 @@
 .home{
-    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* display: flex;
     flex-direction: column;
-    
+     */
 }
 /* .home > *{
     border: 5px blue solid;
@@ -11,7 +15,20 @@
 
 
 .home-background{
-    /* filter: blur(5px); */
     width: 100%;
     height: 100%;
+    background-size: 'cover';
+    background-position: 'center';
+    /* image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated(20px); */
+    /* filter: blur(5px); */
+}
+.home-background-effect{
+    position: absolute;
+    top: 0px;
+    background-image: radial-gradient(farthest-side, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 150%);
+    width: 100%;
+    height: 100%;
+    background-size: 'cover';
+    background-position: 'center';
 }

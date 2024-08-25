@@ -7,7 +7,7 @@ export function Entry(props){
   
         <div className="entry-left text-item">
           <div className="entry-left-1">
-              <img className="entry-icon" src={props.entryData.icon}  />
+              <img className="entry-icon" src={`${process.env.PUBLIC_URL}${props.entryData.icon}`}  />
           </div>
           <div className="entry-left-2">
             <h2 className="entry-date">

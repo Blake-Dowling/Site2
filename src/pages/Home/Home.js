@@ -1,19 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import BackgroundImageSelf from '../../assets/_DSF0107.JPG'
 import './Home.css'
+const selfImageSrc = `${process.env.PUBLIC_URL}/self-image.JPG`
 export const Home = forwardRef((props, ref) => (
-    // <div ref={ref} className="home">
-        <div ref={ref} className="home-background" alt="Logo" 
-          style={{
-            backgroundImage: `radial-gradient(farthest-side, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 150%), url(${BackgroundImageSelf})`, 
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }} >
-
-          </div>
-      
-
-    // </div>
+    <div ref={ref} className="home">
+        <img ref={ref} className="home-background" alt="Logo" 
+          src={selfImageSrc}
+        />
+        <div className="home-background-effect"/>
+    </div>
   )
 )

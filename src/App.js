@@ -96,17 +96,25 @@ function App() {
       <Projects ref={projectsRef}/>
       {/* <div className={`top-button${active?"":" inactive"}`} onClick={() => scrollToRef(homeRef)}>Top</div> */}
       {currentPage===0 &&
-        <img className={`bottom-button moving${active?"":" inactive"}`} onClick={() => scrollToRef(educationRef)} src={'/down-icon.svg'}></img>
+        <div className={`button bottom${active?"":" inactive"}`} onClick={() => scrollToRef(educationRef)} >
+          <img src={`${process.env.PUBLIC_URL}/down-icon.svg`}/>
+        </div>
       }
       {currentPage===1 &&
       <>
-        <img className={`top-button moving${active?"":" inactive"}${headerVisible?" header-visible":""}`} onClick={() => scrollToRef(homeRef)} src={'/up-icon.svg'}></img>
-        <img className={`bottom-button moving${active?"":" inactive"}`} onClick={() => scrollToRef(projectsRef)} src={'/down-icon.svg'}></img>
+        <div className={`button top${active?"":" inactive"}${headerVisible?" header-visible":""}`} onClick={() => scrollToRef(homeRef)} >
+          <img src={`${process.env.PUBLIC_URL}/up-icon.svg`}/>
+        </div>
+        <div className={`button bottom${active?"":" inactive"}`} onClick={() => scrollToRef(projectsRef)} >
+          <img src={`${process.env.PUBLIC_URL}/down-icon.svg`}/>
+        </div>
       </>}
       {currentPage===2 &&
       <>
-        <img className={`top-button moving${active?"":" inactive"}${headerVisible?" header-visible":""}`} onClick={() => scrollToRef(educationRef)} src={'/up-icon.svg'}></img>
-        <div className={`bottom-button${active?"":" inactive"}`} onClick={() => scrollToRef(homeRef)} >Top</div>
+        <div className={`button top${active?"":" inactive"}${headerVisible?" header-visible":""}`} onClick={() => scrollToRef(educationRef)} >
+          <img src={`${process.env.PUBLIC_URL}/up-icon.svg`}/>
+        </div>
+        <div className={`button bottom${active?"":" inactive"}`} onClick={() => scrollToRef(homeRef)} >Top</div>
       </>}
 
     </div>

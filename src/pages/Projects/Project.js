@@ -23,7 +23,7 @@ export function Project(props, ref) {
             }
             {props.projectData["demo-type"] === "video" && 
                 <video controls
-                    src={props.projectData["demo-url"]}
+                    src={`${process.env.PUBLIC_URL}${props.projectData["demo-url"]}`}
                 />
             }
         </div>

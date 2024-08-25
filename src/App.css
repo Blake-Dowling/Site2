@@ -69,26 +69,44 @@ h2{
   padding-right: 2vw;
 }
 
-.top-button{
+.button{
+  /* border: solid 2px white; */
+  width: 8vw;
+  height: 8vw;
   color: white;
-  max-height: 4vh;
   position: fixed;
-  top: 4vh;
+  display: flex;
+  justify-content: center;
   text-decoration: underline;
   cursor: pointer;
-
-  transition: transform .5s ease-in-out;
 }
-.top-button.moving{
-  animation: top-button-move 1s ease-in-out infinite;
-}
-.top-button.inactive{
+.button.inactive{
   max-height: 0px;
   overflow: hidden;
 }
-.top-button.header-visible{
+.button.top{
+  top: 4vh;
+  transition: transform .5s ease-in-out;
+}
+.button.top.header-visible{
   transform: translateY(10vh); 
 }
+.button.bottom{
+  bottom: 4vh;
+}
+
+.button > img{
+  position:absolute;
+  height: 4vh;
+}
+.button.top > img{
+  animation: top-button-move 1s ease-in-out infinite;
+}
+.button.bottom > img{
+  animation: bottom-button-move 1s ease-in-out infinite;
+}
+
+
 @keyframes top-button-move {
   0%{
     top: 4vh;
@@ -97,21 +115,7 @@ h2{
     top: 0vh;
   }
 }
-.bottom-button{
-  color: white;
-  max-height: 4vh;
-  position: fixed;
-  bottom: 4vh;
-  text-decoration: underline;
-  cursor: pointer;
-}
-.bottom-button.moving{
-  animation: bottom-button-move 1s ease-in-out infinite;
-}
-.bottom-button.inactive{
-  max-height: 0px;
-  overflow: hidden;
-}
+
 @keyframes bottom-button-move {
   0%{
     bottom: 4vh;
