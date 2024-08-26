@@ -11,7 +11,7 @@ export const Education = forwardRef((props, ref) => (
             Education
         </h1>
 
-      {educationData?.map((entryData) => {return <Entry entryData={entryData}/>})}
+      {educationData?.map((entryData) => {return <Entry entryData={entryData} mobileView={props.mobileView}/>})}
     </div>
   )
 )

@@ -12,7 +12,7 @@ export const Experience = forwardRef((props, ref) => (
       </h1>
 
 
-      {experienceData.map((entryData) => {return <Entry entryData={entryData}/>})}
+      {experienceData.map((entryData) => {return <Entry entryData={entryData} mobileView={props.mobileView}/>})}
     </div>
   )
 )

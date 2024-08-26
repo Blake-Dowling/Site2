@@ -7,7 +7,8 @@
         "description": "Developed machine learning algorithms for channel analysis and adaptation. Introduced major workflow improvement by creating live coding API, avoiding 60s network simulator startup. Planned and implemented significant project infrastructure, documentation, testing, and workflow changes."
     },
     {
-        "icon": "/baskin-icon-2.png",
+        "icon": "/baskin-icon.png",
+        "icon-small": "/baskin-icon-2.png",
         "date": "Jan 2023 - June 2023",
         "role": "Computer Science and Engineering Course Reader",
         "company": "Baskin School of Engineering",

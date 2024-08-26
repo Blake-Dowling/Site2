@@ -26,6 +26,7 @@
   text-decoration: none;
 }
 .header-name{
+  cursor: pointer;
   padding: 4vh;
 }
 .header-name-text{
@@ -39,13 +40,14 @@ nav{
 }
 .nav-list{
   /* background: rgba(0,0,0,0); */
+  font-size: 4vh;
   display: flex;
   flex-direction: row;
   
 }
 
-.nav-list * {
-  font-size: 4vh;
+.nav-list > * {
+  cursor: pointer;
   margin: 2vh;
 }
 
@@ -54,6 +56,6 @@ nav{
   padding: 4vh;
   margin-left: auto;
 }
-.social *{
+.social > *{
   margin: 2vh;
 }

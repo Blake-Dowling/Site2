@@ -48,8 +48,12 @@ export function Header(props) {
             </ul>
         </nav>  
         <div className="social">
-            <FontAwesomeIcon size="2x" icon={faLinkedin}/>
-            <FontAwesomeIcon size="2x" icon={faGithub} />
+            <a href={`https://www.linkedin.com/in/blake-dowling/`} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon className="linkedin" size="2x" icon={faLinkedin} />
+            </a>
+            <a href={`https://github.com/Blake-Dowling`} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon className="github" size="2x" icon={faGithub} />
+            </a>
         </div>
     </div>
   )

@@ -10,6 +10,7 @@ import { Experience } from './pages/Experience/Experience'
 import { Resume } from './pages/Resume/Resume'
 import { Contact } from './pages/Contact/Contact'
 import emailjs from '@emailjs/browser'//'emailjs-com'
+import { send } from 'emailjs-com';
 
 function scrollToRef(ref){
   ref?.current?.scrollIntoView({ behavior: 'smooth' })
@@ -19,13 +20,39 @@ function App() {
   const [headerVisible, setHeaderVisible] = useState(true)
   const [active, setActive] = useState(false)
   const [contactPopup, setContactPopup] = useState(false)
+  const [emailSent, setEmailSent] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
   const [loaded, setLoaded] = useState(false)
+  const [mobileView, setMobileView] = useState(false)
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
   const educationRef = useRef(null)
   const experienceRef = useRef(null)
   const projectsRef = useRef(null)
+  const contactFormRef = useRef(null)
+
+  function sendEmail(event){
+    event.preventDefault()
+    emailjs.sendForm('service_aemqy4g', 'template_3c0182j', event.target, 
+    // {publicKey: `${process.env.REACT_APP_EMAIL_JS_KEY}`}
+    )
+    .then(() => {
+      setEmailSent(true)
+      console.log('SUCCESS!');
+    }, (error) => {
+      setEmailSent(true)
+        console.log('FAILED...', error);
+    });
+  }
+  function handleResize(){
+    // console.log(window.innerWidth/ window.innerHeight)
+    if(window.innerWidth/ window.innerHeight < 1.2){
+      setMobileView(true)
+    }
+    else{
+      setMobileView(false)
+    }
+  }
 
   useEffect(() => {
     function handleActive(){
@@ -41,34 +68,23 @@ function App() {
       setCurrentPage(parseInt(window.scrollY/window.innerHeight))
 
     }
-    function sendEmail(event){
-      event.preventDefault()
-      emailjs.sendForm('service_aemqy4g', 'template_3c0182j', event.target, {publicKey: `${process.env.REACT_APP_EMAIL_JS_KEY}`})
-      .then(() => {
-        console.log('SUCCESS!');
-      }, (error) => {
-          console.log('FAILED...', error);
-      });
-    }
+
 
     window.addEventListener('mousemove', handleActive)
     window.addEventListener('scroll', handleActive)
     window.addEventListener('scroll', handleScroll)
     const activeInterval = setInterval(checkActive, 500)
     window.addEventListener('load', setLoaded(true))
-
-    const form = document.getElementById('contact-form')
-    form.addEventListener('submit', (event) => sendEmail(event))
+    window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('mousemove', handleActive)
       window.removeEventListener('scroll', handleActive)
       window.removeEventListener('scroll', handleScroll)
       clearInterval(activeInterval)
       window.removeEventListener('load', setLoaded(true))
-      // window.removeEventListener('submit', (event) => sendEmail(event))
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
-
   return (
     <div className={`app${!loaded?" loading":""}`}>
       
@@ -83,14 +99,26 @@ function App() {
         scrollToRef={scrollToRef}
         setContactPopup={setContactPopup}
       />
-      {<Contact contactPopup={contactPopup} setContactPopup={setContactPopup}/>}
+      {<Contact 
+        ref={contactFormRef}
+        contactPopup={contactPopup} 
+        setContactPopup={setContactPopup} 
+        sendEmail={sendEmail}
+        emailSent={emailSent}
+      />}
       <div className="page">
         <Home ref={homeRef}/>
         <About aboutRef={aboutRef}/>
       </div>
       <div className="page">
-        <Education ref={educationRef}/>
-        <Experience ref={experienceRef}/>
+        <Education 
+          ref={educationRef}
+          mobileView={mobileView}
+        />
+        <Experience 
+          ref={experienceRef}
+          mobileView={mobileView}
+        />
       </div>
 
       <Projects ref={projectsRef}/>

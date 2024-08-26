@@ -21,14 +21,127 @@
     background-position: 'center';
     /* image-rendering: -webkit-optimize-contrast;
     image-rendering: pixelated(20px); */
-    /* filter: blur(5px); */
+    filter: blur(1px);
+    animation: in-out 20s ease-in-out infinite;
 }
+
 .home-background-effect{
     position: absolute;
     top: 0px;
-    background-image: radial-gradient(farthest-side, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 150%);
+    background-image: radial-gradient(farthest-side, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 150%);
+    /* background-image: radial-gradient(farthest-side, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) var(--darkness)); */
     width: 100%;
     height: 100%;
     background-size: 'cover';
     background-position: 'center';
+
+}
+@keyframes in-out {
+
+    0%{
+        transform: translate(-600px) scale(2);
+        filter: blur(20px) contrast(200%) saturate(150%);
+    }
+    5%{
+        transform: translate(0px) scale(1);
+    }
+    15%{
+        
+        filter: blur(1px);
+    }
+
+    15%{
+        transform: translate(0px) scale(1);
+        filter: blur(1px);
+    }
+    17%{
+        filter: blur(10px);
+        transform: translate(-200px) scale(1.5);
+    }
+    21%{
+        filter: blur(1px);
+        transform: translate(0px) scale(1);
+    }
+    26%{
+        filter: blur(20px) contrast(200%) saturate(150%);
+    }
+    32%{
+        filter: blur(1px);
+    }
+
+    50%{
+        transform: translate(0px) scale(1);
+        filter: blur(1px);
+    }
+    52%{
+        filter: blur(10px);
+        transform: translate(-200px) scale(1.5);
+    }
+    54%{
+        filter: blur(1px);
+        transform: translate(0px) scale(1);
+    }
+    59%{
+        filter: blur(20px) contrast(200%) saturate(150%);
+    }
+    65%{
+        filter: blur(1px);
+    }
+
+    80%{
+        filter: blur(1px);
+    }
+    100%{
+        filter: blur(20px) contrast(200%) saturate(150%);
+    }
+
+}
+.home > .color{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: 
+    
+    linear-gradient(to top, rgba(0, 0, 0, .1) 0%,rgba(181, 32, 200, 0.3) 20% ,rgba(0, 7, 105, 0.5) 80%);
+    background-size: 'cover';
+    background-position: 'center';
+    animation: color 20s infinite;
+}
+@keyframes color {
+    0%{
+        opacity: 50%;
+    }
+    25%{
+        opacity: 70%;
+    }
+    70%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.home > .dark{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: 
+    linear-gradient(to top, rgba(0, 0, 0, .3) 25%,rgba(0,0,0, 0.7) 45% ,rgba(0,0,0, 0.9) 70%, rgba(0,0,0, .9) 90%);
+
+    background-size: 'cover';
+    background-position: 'center';
+    animation: darken 20s infinite;
+}
+@keyframes darken {
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
 }

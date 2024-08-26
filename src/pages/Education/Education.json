@@ -7,7 +7,8 @@
         "description": "GPA: N/A"
     },
     {
-        "icon": "/ucsc-icon-2.png",
+        "icon-small": "/ucsc-icon-2.png",
+        "icon": "/ucsc-icon.png",
         "date": "University of California, Santa Cruz",
         "role": "B.S., Computer Science",
         "company": "2023",

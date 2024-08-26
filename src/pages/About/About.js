@@ -7,8 +7,8 @@ export const About = forwardRef((props, ref) => (
         </h1> */}
         <text className="text-item about-description">
           Blake Dowling is a software engineer at Technology Unlimited Group and a MS CS student at San Diego State University. 
-          Areas of Expertise
-          Applied Machine Learning, Reinforcement Learning, Full Stack Web Development, Data Structures and Algorithms, Software Engineering
+          His areas of expertise include 
+          applied machine learning, reinforcement learning, full stack web development, data structures and algorithms, and software engineering.
         </text>
 
       </div>

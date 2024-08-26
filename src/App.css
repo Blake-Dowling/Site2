@@ -41,7 +41,7 @@ iframe{
   background-position: 'center';
   background-attachment: fixed;
   filter: none;
-  transition: filter 10s;
+  transition: filter 5s;
   
 }
 .app.loading{
@@ -50,6 +50,7 @@ iframe{
   filter: blur(20px) contrast(200%) saturate(150%);
 }
 .page{
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   display: flex;

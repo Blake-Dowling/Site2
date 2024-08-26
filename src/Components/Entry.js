@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Entry.css'
 export function Entry(props){
+
     return (
   
       <div className="experience-entry">
   
         <div className="entry-left text-item">
           <div className="entry-left-1">
+            {(props.entryData["icon-small"] && props.mobileView) &&
+              <img className="entry-icon" src={`${process.env.PUBLIC_URL}${props.entryData["icon-small"]}`}  />
+            }
+            {(!props.entryData["icon-small"] || !props.mobileView) &&
               <img className="entry-icon" src={`${process.env.PUBLIC_URL}${props.entryData.icon}`}  />
+            }
           </div>
           <div className="entry-left-2">
             <h2 className="entry-date">

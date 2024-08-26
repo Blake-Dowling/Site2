@@ -8,6 +8,8 @@ export const Home = forwardRef((props, ref) => (
           src={selfImageSrc}
         />
         <div className="home-background-effect"/>
+        <div className="color"/>
+        <div className="dark"/>
     </div>
   )
 )
