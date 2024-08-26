@@ -34,7 +34,7 @@ function App() {
   function sendEmail(event){
     event.preventDefault()
     emailjs.sendForm('service_aemqy4g', 'template_3c0182j', event.target, 
-    // {publicKey: `${process.env.REACT_APP_EMAIL_JS_KEY}`}
+    {publicKey: `${process.env.REACT_APP_EMAIL_JS_KEY}`}
     )
     .then(() => {
       setEmailSent(true)
