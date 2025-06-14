@@ -13,7 +13,13 @@
         "github": "https://github.com/Blake-Dowling/Distributed-Parallel-Cracker",
         "description": "Solved time-efficient brute-force DES hash decryption using C++, Posix Thread Library, and socket communication to maximally utilize 4 24-core servers. Implemented thread pool design to allow use of a variable number of cores per server. Optimized multicast and TCP interaction to achieve a 2000% speedup from my sequential true radix cracking algorithm, winning first place in an advanced C++ programming competition."
     },
-
+    {
+        "name": "Mobile Travel Planner",
+        "demo-type": "iframe",
+        "demo-url": "https://docs.google.com/presentation/d/e/2PACX-1vQDduuBMshfnrpgR8pui37MfzQY4C4E3abxEw62ERwOkEcQI_Fozq4hcYr0b-_Wvg/pubembed?start=true&loop=true&delayms=2000",
+        "github": "https://github.com/kesparik/CSE-115A-Road-Trip-Project",
+        "description": "Led a team as Scrum master in building a mobile navigation app React Native, Google APIs, and Nativewind. Drove group members to learn task-relevant skills such as Axios, MongoDB, and Node.js to complete sprints with compatible integrations. Received positive recognition from instructor for Agile Scrum accordance and collective completion of user features in class product presentations."
+    },
     {
         "name": "Resume Generator",
         "demo-type": "iframe",
